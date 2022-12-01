@@ -7,15 +7,15 @@ public class MouseOrbitImproved : MonoBehaviour
 {
  
     public Transform target;
-    public float distance = 5.0f;
+    public float distance = 9.0f;
     public float xSpeed = 120.0f;
     public float ySpeed = 120.0f;
  
     public float yMinLimit = -20f;
     public float yMaxLimit = 80f;
  
-    public float distanceMin = .5f;
-    public float distanceMax = 15f;
+    public float distanceMin = 5.5f;
+    public float distanceMax = 15.0f;
  
     private Rigidbody rigidbodyA;
  
@@ -67,9 +67,11 @@ public class MouseOrbitImproved : MonoBehaviour
                 y = ClampAngle(y, yMinLimit, yMaxLimit);
  
                 Quaternion rotation = Quaternion.Euler(y, x, 0);
- 
+                
                 distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
- 
+                
+
+
                 RaycastHit hit;
                 if (Physics.Linecast(target.position, transform.position, out hit))
                 {
