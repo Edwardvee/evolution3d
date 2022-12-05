@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     
     private Building buildingToPlace;
 
-    public CustomCursor customCursor;
 private void Update() 
       {
             goldDisplay.text = gold.ToString(); 
@@ -19,11 +18,7 @@ private void Update()
       }
       public void ComprarCosa(Building building){
             if(gold >= building.costo){
-                  customCursor.gameObject.SetActive(true);
-                  customCursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
-                  Cursor.visible = false;
                   gold -= building.costo;
-                  buildingToPlace = building;
             }
       }
 }  

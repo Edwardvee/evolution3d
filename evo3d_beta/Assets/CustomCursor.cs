@@ -8,6 +8,6 @@ public class CustomCursor : MonoBehaviour
     void Update()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousePosition; 
+        transform.position = mousePosition;
     }
 }
