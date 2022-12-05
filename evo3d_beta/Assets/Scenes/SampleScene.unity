@@ -732,7 +732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &668556589
 Transform:
   m_ObjectHideFlags: 0
@@ -1320,9 +1320,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: ad0eb0bf137e4d9419ade23f01b07621, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1641462802}
+        m_TargetAssemblyTypeName: BuildingSystemManuel, Assembly-CSharp
+        m_MethodName: OnResidentialButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1553,7 +1553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1637185812}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1641462802}
+        m_TargetAssemblyTypeName: BuildingSystemManuel, Assembly-CSharp
+        m_MethodName: OnIndustrialButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1637185812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1641462801}
-  - component: {fileID: 1641462800}
+  - component: {fileID: 1641462802}
   m_Layer: 0
   m_Name: NuevoBuildingManager
   m_TagString: Untagged
@@ -1609,22 +1621,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1641462800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641462799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0eb0bf137e4d9419ade23f01b07621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  residentialPrefab: {fileID: 919132149155446097, guid: a35b0aeca52ee5b40aba0f06cb018d0d, type: 3}
-  commercialPrefab: {fileID: 919132149155446097, guid: a35b0aeca52ee5b40aba0f06cb018d0d, type: 3}
-  industrialPrefab: {fileID: 919132149155446097, guid: a35b0aeca52ee5b40aba0f06cb018d0d, type: 3}
-  currentBalance: 1400
 --- !u!4 &1641462801
 Transform:
   m_ObjectHideFlags: 0
@@ -1640,6 +1636,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1641462802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641462799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0eb0bf137e4d9419ade23f01b07621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  residentialPrefab: {fileID: 1972128154}
+  commercialPrefab: {fileID: 1529946771}
+  industrialPrefab: {fileID: 1529946771}
 --- !u!1 &1685829522
 GameObject:
   m_ObjectHideFlags: 0
