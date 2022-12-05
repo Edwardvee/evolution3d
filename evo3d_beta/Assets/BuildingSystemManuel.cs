@@ -20,7 +20,7 @@ public class BuildingSystemManuel : MonoBehaviour
     // The current balance of the player's virtual currency
     public int Deterioration;
     public Text deteriorationDisplay;
-    public Building build;
+    private Building build;
     
     // The currently selected building type
     private GameObject selectedBuildingType;
@@ -54,12 +54,12 @@ public class BuildingSystemManuel : MonoBehaviour
         {
                 // If the user is not currently placing a building,
                 // check if they have enough virtual currency to buy one
-                private cost = build.costo;
-                if (Deterioration >= cost)
+                  
+                if (Deterioration >= build.costo)
                 {
                     // If the user has enough virtual currency,
                     // subtract the cost of the building from their balance
-                    Deterioration -= cost;
+                    Deterioration -= build.costo;
 
                     // Instantiate a new building at the placement location
                     currentBuilding = Instantiate(selectedBuildingType, placementLocation, Quaternion.identity);
