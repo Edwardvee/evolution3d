@@ -6,12 +6,13 @@ public class Building : MonoBehaviour
 {
     public int costo;
 
-    public int AumentoDeSol;
+    public int Income;
 
     public float timeBtwIncreases;
     private float nextIncreaseTime;
 
     private GameManager gm;
+    public BuildingSystemManuel bsm;
 
      private void Start()
     {
@@ -26,7 +27,7 @@ public class Building : MonoBehaviour
         if (Time.time > nextIncreaseTime)
         {
             nextIncreaseTime = Time.time + timeBtwIncreases;
-            gm.gold += AumentoDeSol;
+            bsm.Deterioration += Income;
         }
     }
 }
