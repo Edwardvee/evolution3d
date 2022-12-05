@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingSystemManuel : MonoBehaviour
 {
-     // Prefabs for the different types of buildings
+    // Prefabs for the different types of buildings
     public GameObject residentialPrefab;
     public GameObject commercialPrefab;
     public GameObject industrialPrefab;
@@ -16,7 +16,10 @@ public class BuildingSystemManuel : MonoBehaviour
     private Vector3 placementLocation;
 
     // The current balance of the player's virtual currency
-    public int currentBalance;
+    private int currentBalance = 100;
+
+    // The currently selected building type
+    private GameObject selectedBuildingType;
 
     void Update()
     {
@@ -34,6 +37,7 @@ public class BuildingSystemManuel : MonoBehaviour
             if (currentBuilding != null)
             {
                 currentBuilding.transform.position = placementLocation;
+                currentBuilding.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
             }
         }
 
@@ -45,7 +49,7 @@ public class BuildingSystemManuel : MonoBehaviour
             {
                 // If the user is not currently placing a building,
                 // check if they have enough virtual currency to buy one
-                int cost = GetBuildingCost(residentialPrefab);
+                int cost = GetBuildingCost(selectedBuildingType);
                 if (currentBalance >= cost)
                 {
                     // If the user has enough virtual currency,
@@ -53,7 +57,7 @@ public class BuildingSystemManuel : MonoBehaviour
                     currentBalance -= cost;
 
                     // Instantiate a new building at the placement location
-                    currentBuilding = Instantiate(residentialPrefab, placementLocation, Quaternion.identity);
+                    currentBuilding = Instantiate(selectedBuildingType, placementLocation, Quaternion.identity);
                 }
             }
             else
@@ -63,6 +67,24 @@ public class BuildingSystemManuel : MonoBehaviour
                 currentBuilding = null;
             }
         }
+    }
+
+    // This method is called when the user clicks the "Residential" button
+    public void OnResidentialButtonClicked()
+    {
+        selectedBuildingType = residentialPrefab;
+    }
+
+    // This method is called when the user clicks the "Commercial" button
+    public void OnCommercialButtonClicked()
+    {
+        selectedBuildingType = commercialPrefab;
+    }
+
+    // This method is called when the user clicks the "Industrial" button
+    public void OnIndustrialButtonClicked()
+    {
+        selectedBuildingType = industrialPrefab;
     }
 
     // Returns the cost of the specified building prefab

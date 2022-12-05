@@ -1624,7 +1624,7 @@ MonoBehaviour:
   residentialPrefab: {fileID: 919132149155446097, guid: a35b0aeca52ee5b40aba0f06cb018d0d, type: 3}
   commercialPrefab: {fileID: 919132149155446097, guid: a35b0aeca52ee5b40aba0f06cb018d0d, type: 3}
   industrialPrefab: {fileID: 919132149155446097, guid: a35b0aeca52ee5b40aba0f06cb018d0d, type: 3}
-  currentBalance: 0
+  currentBalance: 1400
 --- !u!4 &1641462801
 Transform:
   m_ObjectHideFlags: 0
